@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudBank - Update Profile</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Update Your Profile</h1>
+        <a href="/" class="back-link">Back to Dashboard</a>
+    </header>
+
+    <section>
+        <!-- Display flash messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="alert">
+            {% for category, message in messages %}
+            <div class="{{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        <!-- Profile update form -->
+        <form action="/update" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ user.full_name }}" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{ user.email }}" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" value="{{ user.phone }}" required pattern="[0-9]{10}"
+                title="Please enter a valid 10-digit phone number">
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" value="{{ user.address }}" required>
+
+            <button type="submit">Update</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CloudBank. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

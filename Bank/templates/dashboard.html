@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudBank - Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/logout" class="logout-link">Logout</a>
+            <h1>Account Dashboard</h1>
+            <div class="nav-links">
+                <a href="/about_us">About Us</a>
+                <a href="/contact_us">Contact Us</a>
+                <a href="/services">Services</a>
+                <a href="/update">Update Profile</a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <h2>Welcome, {{ username }}!</h2>
+        <ul>
+            <li><a href="/balance">Check Balance</a></li>
+            <li><a href="/transfer">Make a Transaction</a></li>
+            <li><a href="/deposit">Deposit Money</a></li>
+            <li><a href="/statement">View Statement</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CloudBank. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation Page - Bank App</title>
+</head>
+
+<body>
+    <h1>Confirmation</h1>
+    {% if user %}
+    <p>Welcome, {{ user }}!</p>
+    <p>Your transaction has been successfully processed.</p>
+    <p>Thank you for banking with us!</p>
+    <a href="{{ url_for('dashboard') }}">Return to Dashboard</a>
+    {% else %}
+    <p>Error: No user session found.</p>
+    <a href="{{ url_for('login') }}">Login</a>
+    {% endif %}
+</body>
+
+</html>
